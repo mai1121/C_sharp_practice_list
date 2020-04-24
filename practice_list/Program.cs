@@ -7,6 +7,43 @@ namespace practice_list
     {
         static void Main(string[] args)
         {
+            //ディクショナリについて
+            var dic = new Dictionary<string, string>()
+            {
+                { "ユーザー１","りんご" },
+                {"ユーザー２","焼きそば"},
+                {"ユーザー３","ハンバーグ"}
+            };
+            //keyを指定してvalue取得
+            if (dic.ContainsKey("ユーザー１"))
+            {
+                Console.WriteLine(dic["ユーザー１"]);
+            }
+            dic.TryGetValue("ユーザー２",out string name);
+            Console.WriteLine(name);
+            dic.Add("ユーザー４","おにぎり");
+            
+            dic["ユーザー２"] = "スープ";
+            Console.WriteLine(dic["ユーザー２"]);
+
+            foreach (var key in dic.Keys)
+            {
+                Console.WriteLine($"{key}:{dic[key]}");
+            }
+
+            foreach (var d in dic.Values)
+            {
+                Console.WriteLine(d);
+            }
+
+            foreach(var m in dic)
+            {
+                Console.WriteLine($"{m.Key}:{m.Value}");
+            }
+        }
+
+        static void Sub(string[] args)
+        {
             //listの使い方
             //空のリストを宣言
 
